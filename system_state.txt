@@ -1,0 +1,1 @@
+{"state": "video_selection", "candidate_list": [], "selected_video": null}

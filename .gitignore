@@ -1,0 +1,5 @@
+*.db
+.env
+*.mp4
+flask_session
+*.rar

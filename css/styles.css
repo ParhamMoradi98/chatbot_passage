@@ -1,0 +1,331 @@
+/* Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d3d3d3; /* Light grey background */
+    color: #333;
+}
+
+/* Wrapper to hold container and footer */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Layout for Sidebar and Main Content */
+.container {
+    display: flex;
+    flex: 1;  /* Grow to fill available space */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;  /* Reduced sidebar width from 450px to 300px */
+    background: #2c3e50;      /* Dark blue-gray background */
+    color: #ecf0f1;           /* Light text color */
+    padding: 20px;
+    text-align: center;
+    /* Remove sticky/fixed positioning so it flows naturally */
+    display: flex;
+    flex-direction: column;
+    /* Optionally, you can uncomment the next line to force the sidebar
+       to stretch vertically to match the container's height if desired */
+    /* flex: 1; */
+}
+
+/* Sidebar Content */
+.sidebar .profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #ecf0f1;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Sidebar Social Links */
+.sidebar .social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .social-links li {
+    margin: 10px 0;
+}
+
+.sidebar .social-links li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar .social-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar Navigation Links */
+.sidebar .nav-links {
+    margin-top: 20px;
+    text-align: left;
+    position: relative;
+}
+
+.sidebar .nav-links a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 0;
+    position: relative;
+}
+
+.sidebar .nav-links a:hover {
+    background: #34495e;
+    padding-left: 10px;
+}
+
+/* Menu and Submenu Styles */
+.menu {
+    position: relative;
+}
+
+.menu .submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: #34495e;
+    width: 200px;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu .submenu li {
+    margin: 0;
+}
+
+.menu .submenu a {
+    color: #ecf0f1;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.menu .submenu a:hover {
+    background: #1abc9c;
+}
+
+.menu .submenu-details {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: #2c3e50;
+    width: 200px;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu .submenu-details a {
+    color: #ecf0f1;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.menu .submenu-details a:hover {
+    background: #1abc9c;
+}
+
+.menu:hover .submenu {
+    display: block;
+}
+
+.submenu li:hover .submenu-details {
+    display: block;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f4f4f4; /* Maintain original background */
+}
+
+main h2 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+main ul {
+    list-style: none;
+    padding: 0;
+}
+
+main ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #34495e;
+    color: #ecf0f1;
+    font-size: 0.8rem;
+}
+
+/* Info Button */
+a:visited {
+    color: inherit !important;
+}
+
+.info-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 9999px; /* Fully rounded */
+    padding: 6px 10px;       /* Smaller padding */
+    font-size: 12px;         /* Smaller text */
+    color: #333;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: 8px;
+}
+
+.info-button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+}
+
+/* Adjust the icon size and spacing */
+.info-button i {
+    margin-right: 6px;
+    font-size: 14px;
+    transform-origin: 70% 70%;
+    animation: wave 2s infinite;
+}
+
+/* Waving hand animation */
+@keyframes wave {
+    0%   { transform: rotate(0deg); }
+    15%  { transform: rotate(14deg); }
+    30%  { transform: rotate(-8deg); }
+    40%  { transform: rotate(14deg); }
+    50%  { transform: rotate(-4deg); }
+    60%  { transform: rotate(10deg); }
+    70%  { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Chat Box */
+/* Chat Box Adjusted for Full Page */
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;  /* Full viewport height */
+    margin: 0;
+    padding: 15px;
+    background: white;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Chat Messages Adjusted to Fill Available Space */
+#chat-messages {
+    flex: 1;  /* Grows to fill the available space */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.message {
+    margin-bottom: 8px;
+}
+
+/* Chat Input and Button Container */
+.chat-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the button */
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Input Field */
+#user-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 25px 0 0 25px; /* Rounded left side */
+    outline: none;
+    font-size: 16px;
+}
+
+/* Send Button (Styled Like GPT's Search Button) */
+#send-button {
+    padding: 10px 20px;
+    background-color: white;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-left: none;
+    border-radius: 0 25px 25px 0; /* Rounded right side */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+    transition: all 0.2s ease-in-out;
+}
+
+#send-button:hover {
+    background-color: #f3f3f3;
+}
+
+#send-button i {
+    font-size: 18px;
+}
+
+/* Chat Title Styling */
+.chat-title {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2c3e50; /* Deep blue-gray */
+    font-family: 'Playfair Display', serif; /* Stylish and readable */
+    margin-bottom: 20px;
+}
+
+/* Highlighted "DeepSeek API chatbot" */
+.highlighted-text {
+    font-size: 32px; /* Bigger size */
+    color: #0f0f0f; /* Blue color */
+    font-weight: 700;
+    padding: 10px 20px;
+    border: 3px solid #007bff; /* Blue border */
+    border-radius: 30px; /* Rounded shape */
+    display: inline-block;
+    background: white; /* Keep contrast */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Elegant shadow */
+}
+
